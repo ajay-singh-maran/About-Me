@@ -1,0 +1,207 @@
+,
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume - Ajay Singh Maran</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="box">
+
+    <div class="profile">
+      <div>
+      <img src="pic.jpg">
+      <div class="name">
+        <h2>Ajay Singh Maran</h2>
+        <p>Student - BA prog. Computer Application & Eco. PGDAV EVE. COLLEGE, DELHI UNIVERSITY <br>PGDAV. EVE. UOD, Delhi </p>
+      </div>
+    </div>
+  <div id="scrollDiv">
+    
+    <div class="scrollText">SCROLL DOWN</div>
+    <div class="scroller"></div>
+    
+  </div>  
+  </div>
+
+    <div class="education animatable">
+      <h1>EDUCATION:</h1>
+      <ul>
+        <li>Higher Secondary Examination (10<sup>th</sup>) - 75%<br> Jawahar Navodaya Vidyalaya, Bhopal (CBSE)</li>
+        <li>Senior Secondary Examination (12<sup>th</sup>) - 86.8%<br> Jawahar Navodaya Vidyalaya, Bhopal (CBSE)</li>
+        <li>BA PROG. CA+ECO  - Currently Enrolled<br> PGDAV. EVE. UOD, Delhi</li>
+      </ul>
+    </div>
+
+    <div class="skills animatable">
+      <h1>SKILLS:</h1>
+      <div class="skillList">
+
+        <div class="skillItem">
+          <div>HTML</div>
+          <div>
+            <div></div>
+          </div>
+          <div>95%</div>
+        </div>
+
+        <div class="skillItem">
+          <div>CSS</div>
+          <div>
+            <div></div>
+          </div>
+          <div>85%</div>
+        </div>
+
+        <div class="skillItem">
+          <div>JavaScript</div>
+          <div>
+            <div></div>
+          </div>
+          <div>75%</div>
+        </div>
+
+        <div class="skillItem">
+          <div>Python</div>
+          <div>
+            <div></div>
+          </div>
+          <div>90%</div>
+        </div>
+
+        <div class="skillItem">
+          <div>MySQL</div>
+          <div>
+            <div></div>
+          </div>
+          <div>80%</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hobbies animatable">
+      <h2>HOBBIES: </h2>
+      <ul>
+        <li>Listening Music</li>
+        <li>Coding</li>
+        <li>Badminton</li>
+      </ul>
+    </div>
+
+    <div class="projects animatable">
+      <h2>PROJECTS: </h2>
+      <ul>
+        <li>Dance Academy Website</li>
+        <li>Music Player - Web</li>
+        <li>Notes Taking Website</li>
+        <li>Spelling Checker GUI - Python</li>
+        <li>Employe Management System - Python</li>
+      </ul>
+    </div>
+
+    <div class="contact animatable">
+      <h2>CONTACT: </h2>
+      <ul>
+        <li> Bhopal, Madhya Pradesh</li>
+        <li> AJAYSINGHMARAN812@GMAIL.COM</li>
+        <li> +91 9575353406</li>
+
+      </ul>
+    </div>
+
+
+    <div class="footer"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script type="text/javascript">
+
+    let mainDiv = document.querySelector(".box");
+    let allDivs = document.querySelectorAll(".box>div.animatable");
+    let scrollerDiv = document.querySelector('#scrollDiv');
+
+    scrollerDiv.addEventListener('click', ()=>{
+
+      if(window.scrollY == 0){
+        window.scrollBy(0,400)
+      }
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(CSSPlugin);
+
+    gsap.to(mainDiv, {
+      left: 0,
+      opacity: 1,
+      duration: 0.75,
+      ease: "power4.in"
+    });
+
+    allDivs.forEach(element => {
+      gsap.to(element, {
+      scrollTrigger: {
+        trigger: element,
+        toggleActions: "restart none none reset",
+        start: "top 95%"
+      },
+      opacity: 1,
+      top: 0,
+      duration: 0.75,
+      ease: "power4.in"
+    });
+    });
+    gsap.to(".skillList .skillItem:nth-child(1) div:nth-child(2) div", {
+      scrollTrigger: {
+        trigger: ".skillItem:nth-child(1)",
+        toggleActions: "restart none none reset",
+        start: "top 95%",
+      },
+      width: "95%"
+    });
+    gsap.to(".skillList .skillItem:nth-child(2) div:nth-child(2) div", {
+      scrollTrigger: {
+        trigger: ".skillItem:nth-child(2)",
+        toggleActions: "restart none none reset",
+        start: "top 95%",
+      },
+      width: "85%"
+    });
+    gsap.to(".skillList .skillItem:nth-child(3) div:nth-child(2) div", {
+      scrollTrigger: {
+        trigger: ".skillItem:nth-child(3)",
+        toggleActions: "restart none none reset",
+        start: "top 95%",
+      },
+      width: "75%"
+    });
+    gsap.to(".skillList .skillItem:nth-child(4) div:nth-child(2) div", {
+      scrollTrigger: {
+        trigger: ".skillItem:nth-child(4)",
+        toggleActions: "restart none none reset",
+        start: "top 95%",
+      },
+      width: "90%"
+    });
+    gsap.to(".skillList .skillItem:nth-child(5) div:nth-child(2) div", {
+      scrollTrigger: {
+        trigger: ".skillItem:nth-child(5)",
+        toggleActions: "restart none none reset",
+        start: "top 95%"
+      },
+      width: "80%"
+    });
+
+
+  </script>
+</body>
+
+</html>Ajay Singh Maran
